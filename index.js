@@ -5,7 +5,7 @@ const fs = require("fs");
 //Function to generate ReadMe
 const generateReadMe = ({ title, license, description, install, usage, contributors, test, email, github}) =>
 `# ${title}
-![Github licence](http://img.shields.io/badge/license-${license}-blue.svg)
+<img src="http://img.shields.io/badge/license-${license}-blue.svg">
 
 ## Description 
 ${description}
@@ -22,7 +22,7 @@ ${install}
 ## Usage 
 ${usage}
 ## License 
-This project is license under ${license}
+This project is licensed under ${license}
 ## Contributing 
 ${contributors}
 ## Tests
@@ -89,7 +89,7 @@ inquirer
         type: 'list',
         name: 'license',
         message: 'What kind of license should your project have?',
-        choices: ['MIT', 'GNU'],
+        choices: ['MIT', 'GNU', 'NO LICENSE'],
         default: ["MIT"],
         validate: userInput => {
             if (userInput) {
@@ -142,11 +142,10 @@ inquirer
 ])
   .then((answers) => {
     const readMeContent = generateReadMe(answers);
-
     // Function to write README file
-    fs.writeFile("myReadMe.md", readMeContent, (err) =>
+    fs.writeFile("README.md", readMeContent, (err) =>
       // when the README has been created & catch errors
-      err ? console.log(err) : console.log('Successfully created myReadMe.md!')
+      err ? console.log(err) : console.log('Successfully created README.md!')
     );
   });
 

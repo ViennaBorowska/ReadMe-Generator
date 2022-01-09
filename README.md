@@ -37,7 +37,7 @@ The user should clone the repository from GitHub and run in a code editor termin
 
 ## Usage
 
-Answer questions about your project when prompted in the command line to generate a README file.
+Answer questions about your project when prompted in the command line to generate a README file. Navigate to the correct folder and run 'node index.js' in the terminal.
 <img src="Assets/Project-Demo.gif" alt="Demo video of how to run and use program - visual of app being run in command line and questions being answered, and finally a README file is generated.">
 
 ## Contributing

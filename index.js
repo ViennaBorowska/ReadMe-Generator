@@ -1,10 +1,10 @@
-//Packages
+//Packages & imports
 const inquirer = require("inquirer");
 const fs = require("fs");
 const path = require("path");
 const generateMarkdown = require("./utils/generateMarkdown");
 
-//Function to generate ReadMe
+//Questions Array
 const questions = [
   {
     type: "input",
@@ -120,26 +120,17 @@ const questions = [
   },
 ];
 
+// Function to write README file
 function writeToFile(fileName, data) {
   return fs.writeFileSync(path.join(process.cwd(), fileName), data);
 }
-
+//Function to build ReadMe with user imput & confirm in terminal
 function init() {
   inquirer.prompt(questions).then((answers) => {
     console.log("Successfully created README.md!");
-    writeToFile("Sample-README/README.md", generateMarkdown({ ...answers }));
+    writeToFile("My-README/README.md", generateMarkdown({ ...answers }));
   });
 }
 
-init();
-//   .then((answers) => {
-//     const readMeContent = generateReadMe(answers);
-//     // Function to write README file
-//     fs.writeFile("README.md", readMeContent, (err) =>
-//       // when the README has been created & catch errors
-//       err ? console.log(err) : console.log('Successfully created README.md!')
-//     );
-//   });
-
 // Call to initialise function
-//generateReadMe();
+init();

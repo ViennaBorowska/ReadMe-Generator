@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a project to build a CLI which prompts user imput with a series of questions, and generates a high-quality, professional README file.
+This is a project to build a CLI which prompts user input with a series of questions, and generates a high-quality, professional README file.
 
 WARNING!
 Once a README file has been generated, the program will automatically overwrite this if the application is re-run, so if multiple generations are needed please ensure files are renamed/moved before the next file is generated.
